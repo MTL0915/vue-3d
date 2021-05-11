@@ -59,7 +59,7 @@
       loadObj () {
         let that=this;
         let objloader=new OBJLoader();
-        objloader.load('/static/cat.obj',function(obj){
+        objloader.load('/static/caizhi.obj',function(obj){
           that.mesh=obj;
           that.scene.add(that.mesh);
           that.animate();
