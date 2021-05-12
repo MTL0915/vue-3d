@@ -1,7 +1,5 @@
 <template>
-  <div>
-
-  </div>
+  <div></div>
 </template>
 
 <script>
@@ -32,7 +30,7 @@
          // 创建场景
         this.scene = new Three.Scene();
         let k = width/height;
-        let s = 250;
+        let s = 100;
         this.camera = new Three.OrthographicCamera(-s*k,s*k,s,-s,1,1000);
         this.camera.position.set(200, 200, 120);
         this.camera.lookAt(new Three.Vector3(1, 80, 0));
@@ -59,7 +57,7 @@
       loadObj () {
         let that=this;
         let objloader=new OBJLoader();
-        objloader.load('/static/caizhi.obj',function(obj){
+        objloader.load('/static/cat.obj',function(obj){
           that.mesh=obj;
           that.scene.add(that.mesh);
           that.animate();
