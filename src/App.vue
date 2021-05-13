@@ -1,25 +1,25 @@
 <template>
 	<div id="box">
-    <Cat></Cat>
+    <!-- <Cat></Cat> -->
 		<Muxiang></Muxiang>
-    <Feichuan></Feichuan>
-    <Female></Female>	
+    <!-- <Feichuan></Feichuan>
+    <Female></Female>	 -->
 	</div>
 </template>
 
 <script>
-import Cat from './components/Cat'
+// import Cat from './components/Cat'
 import Muxiang from './components/Muxiang'
-import Feichuan from './components/Feichuan'
-import Female from './components/Female'
+// import Feichuan from './components/Feichuan'
+// import Female from './components/Female'
 
 export default {
   name: 'App',
   components: {
-    Cat,
+    // Cat,
 		Muxiang,
-    Feichuan,
-    Female
+    // Feichuan,
+    // Female
   }
 }
 </script>
@@ -40,9 +40,10 @@ export default {
     font-size: 13px;
     text-align: center;
     font-weight: bold;
-    background-image: url(/static/bg.jpg);
     margin: 0px;
     overflow: hidden;
+    width:100%;
+    height:100%;
 }
 </style>
 
