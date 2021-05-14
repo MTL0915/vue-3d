@@ -5,10 +5,10 @@
 <script>
 import * as Three from "three";
 import OrbitControls from "three-orbitcontrols";
-import { OBJLoader,MTLLoader} from "three-obj-mtl-loader";
+import { OBJLoader, MTLLoader } from "three-obj-mtl-loader";
 
 export default {
-  name: "Muxiang",
+  name: "Test",
   data() {
     return {
       // 相机
@@ -47,41 +47,38 @@ export default {
       var ambient = new Three.AmbientLight(0xffffff);
       this.scene.add(ambient);
       // 创建渲染器
-      this.renderer = new Three.WebGLRenderer({ antialias: true, alpha: true });
-      this.renderer.setClearAlpha(0);
+      this.renderer = new Three.WebGLRenderer({ antialias: true });
       this.renderer.setSize(width, height);
-      // this.renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色
+      this.renderer.setClearColor(0xb9d3cc, 1); //设置背景颜色
       document.body.appendChild(this.renderer.domElement);
       // 创建控件对象
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.addEventListener("change", this.animate);
-
     },
     // 创建obj模型
-    loadObjMtl() {
+    loadModel() {
+
         let that=this;
         let objloader=new OBJLoader();
         let mtlloader=new MTLLoader();
-        // objloader.load('/static/caizhi.obj',function(obj){
-        //   that.mesh=obj;
-        //   that.scene.add(that.mesh);
-        //   that.animate();
-        // })
+        
 
-        mtlloader.load('/static/muxiang.mtl', function(materials) {
+        mtlloader.load('/static/feichuan.mtl', function(materials) {
           // 返回一个包含材质的对象MaterialCreator
           console.log(materials);
           //obj的模型会和MaterialCreator包含的材质对应起来
           objloader.setMaterials(materials);
-          objloader.load('/static/muxiang.obj', function(obj) {
+          objloader.load('/static/feichuan.obj', function(obj) {
             console.log(obj);
             that.mesh=obj;
             that.scene.add(that.mesh);
-            that.animate();
           })
         })
+        
+        setTimeout(function(){
+          that.animate();
+        },500)
     },
-
 
     // 创建动画
     animate() {
@@ -90,9 +87,7 @@ export default {
   },
   mounted() {
     this.init();
-    this.loadObjMtl();
+    this.loadModel()
   },
 };
 </script>
-
-

@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div id="feichuan"></div>
 </template>
 
 <script>
@@ -47,10 +47,12 @@ export default {
       var ambient = new Three.AmbientLight(0xffffff);
       this.scene.add(ambient);
       // 创建渲染器
-      this.renderer = new Three.WebGLRenderer({ antialias: true });
+      this.renderer = new Three.WebGLRenderer({ antialias: true, alpha: true });
+      this.renderer.setClearAlpha(0);
       this.renderer.setSize(width, height);
-      this.renderer.setClearColor(0xb9d3aa, 1); //设置背景颜色
-      document.body.appendChild(this.renderer.domElement);
+      // this.renderer.setClearColor(0xb9d3aa, 1); //设置背景颜色
+      
+      document.getElementById("feichuan").appendChild(this.renderer.domElement);
       // 创建控件对象
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.addEventListener("change", this.animate);
@@ -92,3 +94,20 @@ export default {
   },
 };
 </script>
+
+<style>
+
+#feichuan{
+    color: #000;
+    font-family: Monospace;
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+    background: url(/static/bg-qc.jpg) no-repeat;
+    background-size: 100%;
+    margin: 0px;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+}
+</style>

@@ -1,25 +1,28 @@
 <template>
 	<div id="box">
     <!-- <Cat></Cat> -->
-		<Muxiang></Muxiang>
-    <!-- <Feichuan></Feichuan>
-    <Female></Female>	 -->
+		<!-- <Muxiang></Muxiang> -->
+    <!-- <Feichuan></Feichuan> -->
+    <!-- <Female></Female> -->
+    <Test></Test>
 	</div>
 </template>
 
 <script>
 // import Cat from './components/Cat'
-import Muxiang from './components/Muxiang'
+// import Muxiang from './components/Muxiang'
 // import Feichuan from './components/Feichuan'
 // import Female from './components/Female'
+import Test from './components/Test'
 
 export default {
   name: 'App',
   components: {
     // Cat,
-		Muxiang,
+		// Muxiang,
     // Feichuan,
-    // Female
+    // Female,
+    Test
   }
 }
 </script>
