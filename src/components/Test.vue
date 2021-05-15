@@ -54,7 +54,9 @@ export default {
       // 创建控件对象
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.addEventListener("change", this.animate);
+
     },
+
     // 创建obj模型
     loadModel() {
 
@@ -72,12 +74,13 @@ export default {
             console.log(obj);
             that.mesh=obj;
             that.scene.add(that.mesh);
+            that.animate();
           })
         })
         
         setTimeout(function(){
           that.animate();
-        },500)
+        },1000)
     },
 
     // 创建动画
@@ -91,3 +94,6 @@ export default {
   },
 };
 </script>
+
+
+

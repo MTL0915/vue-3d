@@ -4,7 +4,8 @@
 		<!-- <Muxiang></Muxiang> -->
     <!-- <Feichuan></Feichuan> -->
     <!-- <Female></Female> -->
-    <Test></Test>
+    <!-- <Test></Test> -->
+    <Success></Success>
 	</div>
 </template>
 
@@ -13,7 +14,9 @@
 // import Muxiang from './components/Muxiang'
 // import Feichuan from './components/Feichuan'
 // import Female from './components/Female'
-import Test from './components/Test'
+// import Test from './components/Test',
+import Success from './components/Success'
+
 
 export default {
   name: 'App',
@@ -22,7 +25,8 @@ export default {
 		// Muxiang,
     // Feichuan,
     // Female,
-    Test
+    // Test,
+    Success
   }
 }
 </script>
