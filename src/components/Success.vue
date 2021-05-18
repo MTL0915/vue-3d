@@ -49,10 +49,18 @@ export default {
 
 				this.scene = new THREE.Scene();
 
-				this.camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.01, 1000 );
-				this.camera.position.z = 2;
+				this.camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 10, 1000);
+				this.camera.position.x = 200;
+				this.camera.position.z = 500;
+				this.camera.position.y = 200;
 
 				this.controls = new TrackballControls( this.camera, this.renderer.domElement );
+
+				this.controls.noRotate = false; // 旋转
+				this.controls.noZoom = false; // 滚动缩放
+				this.controls.noPan = true; // 右键平移 
+				this.controls.minDistance = 300; //最近距离
+				this.controls.maxDistance = 800; //最远距离
 
 				//
 
@@ -163,6 +171,7 @@ export default {
 
 				}
 
+				//监听浏览器窗户页面宽高的变化
 				window.addEventListener( 'resize', this.onWindowResize );
 
 			},
