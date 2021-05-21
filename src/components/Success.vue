@@ -57,7 +57,7 @@ export default {
 				this.controls = new TrackballControls( this.camera, this.renderer.domElement );
 
 				this.controls.noRotate = false; // 旋转
-				this.controls.noZoom = false; // 滚动缩放
+				this.controls.noZoom = true; // 滚动缩放
 				this.controls.noPan = true; // 右键平移 
 				this.controls.minDistance = 300; //最近距离
 				this.controls.maxDistance = 800; //最远距离
@@ -112,7 +112,7 @@ export default {
 
 				const environments = {
 
-					'Venice Sunset': { filename: 'venice_sunset_1k.hdr' },
+					'Venice Sunset': { filename: 'quchuan.hdr' },
 					'Overpass': { filename: 'pedestrian_overpass_1k.hdr' }
 
 				};
